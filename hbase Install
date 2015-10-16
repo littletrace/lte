@@ -1,0 +1,43 @@
+# lte
+
+hbase Install
+“@http://www.apache.org/dist/hbase/stable” 여기서 새버전을 받을 수 있음
+
+
+    cd /usr/local
+    mkdir data
+    cd data
+    wget http://www.apache.org/dist/hbase/stable/hbase-1.1.2-bin.tar.gz
+    tar xvfz hbase-1.1.2-bin.tar.gz
+    cd hbase-1.1.2
+    hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
+    iface=lo'uname | sed -n s/Darwin/0/p'
+    
+    
+hbase-site.xml correction
+
+    vim conf/hbase-site.xml
+    
+    
+    
+    
+configuration Add to between the tags
+
+<configuration>
+    <property>
+        <name>hbase.rootdir</name>
+        <value>file:///DIRECTORY/hbase</value>
+    </property>
+    <property>
+        <name>hbase.zookp.property.eataDir</name>
+        <value>/DRECTORY/zookeeper</value>
+    </property>
+</configuration>
+
+
+hbase.sh Run
+
+    ./bin/start-hbase.sh
+    # master running as process (process number). Stop it first
+    
+※When " hbase.sh " run, If this is notification because the setting of the 'java_home JDK' is not successful, Run a " profile " again ($ source /etc/profile)
