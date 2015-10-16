@@ -1,0 +1,70 @@
+## OpenTSDB Install
+
+    cd /usr/local
+
+    # 필요시 yum install git
+    git clone git://github.com/OpenTSDB/opentsdb.git
+
+    cd opentsdb
+    yum install autoconf
+    yum install automake
+    ./build.sh  <- It takes about 10 minutes to complete.
+    env COMPRESSION=NONE HBASE_HOME=/usr/local/data/hbase-1.1.2 ./src/create_table.sh 
+    tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
+    mkdir -p "$tsdtmp"
+
+
+
+##Open TSDB Run
+
+    ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
+
+    # 웹브라우저에서 확인
+    http://127.0.0.1:4242
+
+
+* 확인이 안될경우
+
+#########
+2015-10-15 19:03:50,998 ERROR [main] client.ConnectionManager$HConnectionImplementation:
+Can't get connection to ZooKeeper: KeeperErrorCode = ConnectionLoss for /hbase
+########
+
+
+
+
+1. hbase 실행 여부확인
+
+[root@localhost opentsdb]# cd /usr/local/data
+[root@localhost data]# ls
+hbase-1.1.2  hbase-1.1.2-bin.tar.gz  tsd
+[root@localhost data]# cd hbase-1.1.2
+[root@localhost hbase-1.1.2]# ls
+bin          conf  hbase-webapps  lib          logs        README.txt
+CHANGES.txt  docs  LEGAL          LICENSE.txt  NOTICE.txt
+[root@localhost hbase-1.1.2]# cd bin
+[root@localhost bin]# ls
+draining_servers.rb   hbase-config.sh         region_mover.rb           stop-hbase.cmd
+get-active-master.rb  hbase-daemon.sh         regionservers.sh          stop-hbase.sh
+graceful_stop.sh      hbase-daemons.sh        region_status.rb          test
+hbase                 hbase-jruby             replication               thread-pool.rb
+hbase-cleanup.sh      hirb.rb                 rolling-restart.sh        zookeepers.sh
+hbase.cmd             local-master-backup.sh  shutdown_regionserver.rb
+hbase-common.sh       local-regionservers.sh  start-hbase.cmd
+hbase-config.cmd      master-backup.sh        start-hbase.sh
+[root@localhost bin]# ./stop-hbase.sh 
+stopping hbasecat: /tmp/hbase-aa-master.pid: No such file or directory
+
+[root@localhost bin]# ./start-hbase.sh 
+
+
+2. opentsdb table 생성 여부확인
+
+
+   ./build.sh  <- It takes about 10 minutes to complete.
+    env COMPRESSION=NONE HBASE_HOME=/usr/local/data/hbase-1.1.2 ./src/create_table.sh 
+    tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
+    mkdir -p "$tsdtmp"
+    
+    
+
