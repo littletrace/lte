@@ -32,8 +32,12 @@ Can't get connection to ZooKeeper: KeeperErrorCode = ConnectionLoss for /hbase
 
 
 
+1. java 설치 여부확인
 
-1. hbase 실행 여부확인
+#java -version
+
+
+2. hbase 실행 여부확인
 
 [root@localhost opentsdb]# cd /usr/local/data
 [root@localhost data]# ls
@@ -58,8 +62,7 @@ stopping hbasecat: /tmp/hbase-aa-master.pid: No such file or directory
 [root@localhost bin]# ./start-hbase.sh 
 
 
-2. opentsdb table 생성 여부확인
-
+3. opentsdb table 생성 여부확인
 
    ./build.sh  <- It takes about 10 minutes to complete.
     env COMPRESSION=NONE HBASE_HOME=/usr/local/data/hbase-1.1.2 ./src/create_table.sh 
@@ -67,4 +70,38 @@ stopping hbasecat: /tmp/hbase-aa-master.pid: No such file or directory
     mkdir -p "$tsdtmp"
     
     
+
+
+
+## Data Input Test(Restful 방법)
+
+sudo yum install python-setuptools python-setuptools-devel
+sudo easy_install pip
+pip install requests
+
+vi post_test.py
+
+import time
+import requests
+import json
+
+url = "http://127.0.0.1:4242/api/put"
+
+data = {
+    "metric": "foo.bar",
+    "timestamp": time.time(),
+    "value": 2015,
+    "tags": {
+       "host": "mypc"
+    }
+}
+
+ret = requests.post(url, data=json.dumps(data))
+print "ok"
+
+
+
+## 확인
+
+python post_test.py
 
