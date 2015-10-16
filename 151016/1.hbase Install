@@ -1,6 +1,6 @@
 # lte
 
-hbase Install
+ ## hbase Install
 “@http://www.apache.org/dist/hbase/stable” 여기서 새버전을 받을 수 있음
 
 
@@ -21,7 +21,7 @@ hbase-site.xml correction
     
     
     
-configuration Add to between the tags
+ ## configuration Add to between the tags
 
 <configuration>
     <property>
@@ -35,7 +35,7 @@ configuration Add to between the tags
 </configuration>
 
 
-hbase.sh Run
+ ## hbase.sh Run
 
     ./bin/start-hbase.sh
     # master running as process (process number). Stop it first
