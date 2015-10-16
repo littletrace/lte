@@ -1,0 +1,23 @@
+# # GnuPlot Install
+
+    cd /usr/local
+    yum install ant ant-nodeps lzo-devel.x86_64
+    yum list \*gd\*
+    yum install gd-devel.i686
+    wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
+    tar zxvf gnuplot-4.6.3.tar.gz
+    cd gnuplot-4.6.3
+    ./configure
+    make install
+    yum install gnuplot
+    # apt-get install dh-autoreconf
+
+
+# # GNUPlot 
+
+Gnuplot is a portable command-line driven graphing utility for Linux, OS/2, MS Windows, OSX, VMS, and many other platforms. 
+The source code is copyrighted but freely distributed (i.e., you don't have to pay for it). 
+It was originally created to allow scientists and students to visualize mathematical functions and data interactively,
+but has grown to support many non-interactive uses such as web scripting. 
+It is also used as a plotting engine by third-party applications like Octave.
+Gnuplot has been supported and under active development since 1986.
