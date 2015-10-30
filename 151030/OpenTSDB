@@ -25,6 +25,8 @@ Running
 running이 안되면 hbase를 stop하고 재실행
 
 ## hbase.sh Run 
+&cd /usr/local/data/hbase
+
     ./bin/stop-hbase.sh
     ./bin/start-hbase.sh
     # master running as process (process number). Stop it first
