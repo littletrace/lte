@@ -17,8 +17,11 @@ Please comment cancel the portion of the '#TSD_HOST=dns.name.of.tsd' and Enter t
 Tcollector Run - Execution of one terminal anymore
 
     ./startstop start
-
-
+    
+    ### ./startstop force-restart  실행확인. 실행안된것은 강제로 재시작
+    ### ps -ax  모든 프로세스를 확인
+    ###ps -ax | grep inha
+ 
 The connection with 'http://192.168.x.x:4242' in the web address bar
 
 tcollector Test
@@ -35,7 +38,7 @@ test code 만들기
    
 ```sh
 
-#!/usr/bin/python
+#!/usr/bin/python    # 이거 꼭 붙여주기
 
 import sys
 import urllib2
