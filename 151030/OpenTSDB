@@ -1,0 +1,29 @@
+Enter file contents here
+
+
+## Open TSDB Run
+
+시작 경로는 opentsdb가 깔려있는 곳.
+``sh
+
+$ cd /usr/local/opentsdb
+
+``
+
+Running
+
+``sh
+
+ ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
+
+```
+
+    # 웹브라우저에서 확인
+    http://127.0.0.1:4242
+
+##
+
+
+
+### Temperature Input Test(Restful 방법)
+
