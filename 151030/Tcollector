@@ -32,6 +32,8 @@ tcollector Test
 test code 만들기
 
    vim insert_test.py
+   
+``sh
 
 #!/usr/bin/python
 
@@ -51,6 +53,7 @@ while 1 :
         print "inha.test %d %d" % ( time.time(), tsec )
         time.sleep(0.1)
 
+```
 
    # 실행해 보기
    python insert_test.py
