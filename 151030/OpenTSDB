@@ -39,3 +39,11 @@ running이 안되면 hbase를 stop하고 재실행
 
 ### Temperature Input Test(Restful 방법)
 
+
+http://127.0.0.1:4242/api/query?start=2015/10/14-00:00:00&end=2015/10/14-08:19:49&m=sum:foo.bar
+
+# 결과
+[{"metric":"foo.bar","tags":{"host":"mypc"},"aggregateTags":[],"dps":{"1444835983":2015.0}}]
+
+img src ="http://cfile25.uf.tistory.com/image/260D663C5632D1DB31A958"
+
