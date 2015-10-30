@@ -33,7 +33,7 @@ test code 만들기
 
    vim insert_test.py
    
-``sh
+```sh
 
 #!/usr/bin/python
 
