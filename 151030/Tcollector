@@ -24,6 +24,8 @@ Tcollector Run - Execution of one terminal anymore
  
 The connection with 'http://192.168.x.x:4242' in the web address bar
 
+
+
 tcollector Test
 
    # root 권한으로
@@ -32,7 +34,7 @@ tcollector Test
 
 
 
-test code 만들기
+test code 만들기  (경로는 cd /usr/local/tcollector/collectors/0)
 
    vim insert_test.py
    
