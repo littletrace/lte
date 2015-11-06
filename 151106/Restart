@@ -1,0 +1,37 @@
+OPENTSDB
+
+   ### ps -ax  모든 프로세스를 확인 
+   ### ps -ax | grep inha
+   ### kill -9 pid
+
+     
+   ### ./startstop start 
+   ### ./startstop force-restart  실행확인. 실행안된것은 강제로 재시작 
+
+
+
+opentsdb$ cd /usr/local/opentsdb 
+
+ ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
+
+
+
+Hbase
+
+running이 안되면 hbase를 stop하고 재실행 
+
+ ## hbase.sh Run
+ &cd usr/local/data/hbase
+
+     ./bin/stop-hbase.sh 
+     ./bin/start-hbase.sh 
+    # master running as process (process number). Stop it first 
+
+
+
+tcollector Test
+
+   # root 권한으로
+   cd /usr/local/tcollector/collectors/0
+
+
