@@ -1,0 +1,46 @@
+#!/usr/bin/python
+# _*_ coding: utf-8 _*_
+
+import urllib2 # extensible library for opening URLs
+import time
+
+# 인천 미세먼지 
+url = 'http://www.airkorea.or.kr/index'
+
+
+def getData(buffers):
+    a = buffers.split('<tbody id="mt_mmc2_10007">')[1]
+    #print a
+
+    b = a.split('</tbody>')[0].replace('<tr>','').replace('</tr>','').replace('</td>','')
+    #print b
+
+    c = b.split('<td>')
+    #print c[7]
+    #print c[8]
+
+ def insert(c[7],c[8]):
+        data={
+                "metric":"foo3.bar",
+                "timestamp":time.time(),
+                "value":value,
+                "tags":{
+                        "host":"mypc"
+                }
+        }
+
+
+if __name__  == '__main__':
+    page = urllib2.urlopen(url).read()
+   #print page
+
+    getData(page)
+
+
+
+
+
+
+
+'' metric 만들기.
+" 
