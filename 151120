@@ -1,4 +1,4 @@
-```python
+
 
 exercise 3
 •기상청 웹페이지(http://www.kma.go.kr/weather/lifenindustry/sevice_rss.jsp) 
@@ -6,6 +6,9 @@ exercise 3
 •크롤링하여 온도를 출력하고 openTSDB에 저장
 
 참고
+
+```python
+
 
 #!/usr/bin/python
 # -*- coding: utf-8 -*- 
