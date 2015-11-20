@@ -27,18 +27,39 @@ exercise 3
 
 import urllib2 # extensible library for opening URLs
 import time
+import sys
+import urllib2
+from datetime import datetime, timedelta
+import json
+import requests
 
 from lxml.html import parse, fromstring # processing XML and HTML
 
+
 # 인천 남구 용현동 기상상황 확인 url
 url = 'http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=2823759100'
+url_local= "http://127.0.0.1:4242/api/put"
+
 temp=[]
+
+def insert(metric_name, tag_site, value):
+    data={
+        "metric":metric_name,
+        "timestamp":time.time(),
+        "value":value,
+        "tags":{
+            "site":tag_site
+        }
+    }
+
+
 
 def temp_process(xml):
     for  elt in xml.getiterator("temp"):    # getting temp tag 
         temp_val = elt.text
         print temp_val
 
+        insert('inchon', tempearture',temp_val)
 if __name__ == '__main__':
     page = urllib2.urlopen(url).read()
     print page
