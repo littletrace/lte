@@ -1,5 +1,5 @@
+```
 
-''
 exercise 3
 •기상청 웹페이지(http://www.kma.go.kr/weather/lifenindustry/sevice_rss.jsp) 
 •xml 형태로 리턴해줌
@@ -46,6 +46,6 @@ if __name__ == '__main__':
 
     # processing temperature
     temp_process(xml_raw)
+```
 
-''
 
